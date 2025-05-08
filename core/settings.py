@@ -13,7 +13,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-swk0o%3eaop(d&@((3^+84+(z9yg$b94ox0t^+jh*gd&sasvdm'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -39,9 +39,6 @@ INSTALLED_APPS = [
 
 SWAGGER_SETTINGS = {
     'SECURITY_DEFINITIONS': {
-        'Basic': {
-            'type': 'basic'
-        },
         'Bearer': {
             'type': 'apiKey',
             'name': 'Authorization',
@@ -141,7 +138,7 @@ STATIC_URL = 'static/'
 if DEBUG:
     STATICFILES_DIRS = [BASE_DIR / 'static']
 else:
-    STATIC_ROOT = BASE_DIR / 'static'
+    STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
